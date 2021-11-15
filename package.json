@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amandagallaro/NutritionWebApp.git"
+    "url": "https://github.com/amandagallaro/NutritionWebApp.git"
   },
   "author": "Amanda Gallaro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amandagallaro/NutritionWebApp/issues"
+    "url": "https://github.com/amandagallaro/NutritionWebApp/issues"  
+
   },
   "homepage": "https://github.com/amandagallaro/NutritionWebApp#readme",
   "dependencies": {
