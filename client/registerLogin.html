@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register and Login Form</title>
+    <!-- connect registerLogin.css file -->
+    <link rel="stylesheet" href="/client/css/registerLogin.css">
+    <!-- connect ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- connect loginRegister.js file-->
+    <script src="/client/js/registerLogin.js" async></script> 
+</head>
+<body>
+    <h1>Welcome to (Web Name!)</h1>
+    <h2>Food is fuel!</h2>
+    <!-- 'registerLogin-form' for app.get() res.sendFile in services-sql.js -->
+    <div class="registerLogin-form">
+        <div class="title-text">
+            <div class="title login">Login</div>  
+            <div class="title register">Register</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="register">
+                <label for="login" class="slide login">Login</label>
+                <label for="register" class="slide register">Register</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <!-- Login -->
+                <form class="login">
+                    <div class="field">
+                        <input id="login-email" type="text" placeholder="Email" required>
+                    </div>
+                    <div class="field">
+                        <input id="login-password" type="password" placeholder="Password" required>
+                    </div>
+                    <!-- need to change css before deleting "Forgot password?" -->
+                    <div class="pass-link"><a href="#">Forgot password?</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input id="login-button" value="Login">
+                    </div>
+                    <!-- need to change css before deleting "Not a member? Register now" -->
+                    <div class="register-link">Not a member? <a href=""> Register now</a>
+                    </div>
+                </form>
+                <!-- Register -->
+                <form class="register">
+                    <div class="field">
+                        <input id="register-email" type="text" placeholder="Email" required>
+                    </div>
+                    <div class="field">
+                        <input id="register-password" type="password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input id="register-button" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

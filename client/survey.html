@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/client/css/survey.css">
+    <script src='/client/css/survey.css' async></script>  
+    <script src="/client/js/survey.js" async></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <title>Survey Form</title>
+</head>
+<body>
+    <!-- 'survey' for app.get() res.sendFile in services-sql.js -->
+    <div class="survey">
+    <body>
+        <h1>Nuritional Survey</h1>
+        <h2>Please fill out the following!</h2>
+        
+        <!-- Create Form; 'survey-page' for app.post() in services-sql.js -->
+        <form id="form" action="survey">
+     
+            <!-- Details -->
+        
+            <!-- First Name Label -->
+            <div class="form-control">
+                <label for="first-name" id="first-name-label">
+                    First Name
+                </label>
+     
+                <!-- Input Type Text First Name -->
+                <input type="text"
+                       id="first-name"
+                       placeholder="Enter your first name" />
+            </div>
+            <!-- Last Name Label -->
+            <div class="form-control">
+                <label for="last-name" id="last-name-label">
+                    Last Name
+                </label>
+     
+                <!-- Input Type Text Last Name-->
+                <input type="text"
+                       id="last-name"
+                       placeholder="Enter your last name" />
+            </div>
+      
+            <!-- Gender Label -->
+            <div class="form-control">
+                <label>
+                    Gender
+                </label> 
+
+            <!-- Input Type Checkbox Gender -->
+            <label for="male">
+                <input type="checkbox" id="male" name="gender-male"> Male </input>
+            </label>
+            <label for="female">
+                <input type="checkbox" id="female" name="gender-female"> Female </input>
+            </label>
+            </div>
+
+
+            <!-- Age Label -->
+            <div class="form-control">
+                <label for="age" id="age-label">
+                    Age
+                </label>
+     
+                <!-- Input Type Text Age -->
+                <input type="text"
+                       id="age"
+                       placeholder="Enter your age" />
+            </div>
+
+            <!-- Height Label -->
+            <div class="form-control">
+                <label for="height" id="height-label">
+                    Height
+                </label>
+     
+                <!-- Input Type Text Height-->
+                <input type="text"
+                       id="height"
+                       placeholder="Enter your height" />
+            </div>
+
+            <!-- Weight Label -->
+            <div class="form-control">
+                <label for="weight" id="weight-label">
+                    Weight
+                </label>
+     
+                <!-- Input Type Text Weight-->
+                <input type="text"
+                       id="weight"
+                       placeholder="Enter your weight" />
+            </div>
+
+      
+            <!-- Exercise Level Label -->
+            <div class="form-control">
+                <label for="exercise" id="exercise-label">
+                    How would you describe your level of exercise?
+                </label>
+                 
+                <!-- Exercise Level Dropdown options -->
+                <select name="exercise-level" id="exerise-level">
+                    <option id="not-active" value="not-active"> Not Active </option>
+                    <option id="moderate" value="moderate"> Moderate </option>
+                    <option id="active" value="active"> Active </option>
+                </select><br>
+            </div>
+            
+            <!-- Physical Symptoms Label -->
+            <div class="form-control">
+                <label>Are you experiencing any of these physical symptoms? <br>
+                    <small>(Check all that apply!)</small>
+                </label>
+
+                <!-- Input Type Checkbox Physical Symptoms -->
+                <label for="muscle-aches">
+                    <input type="checkbox"
+                            id="muscle-aches"
+                           name="inp">Muscle Aches</input></label>
+                <label for="fatigue">
+                    <input type="checkbox"
+                            id="fatigue"
+                           name="inp">Fatigue</input></label>
+                <label for="GI-issues">
+                    <input type="checkbox"
+                            id="gi-issues"
+                           name="inp">GI Issues</input></label>
+                <label for="headaches">
+                    <input type="checkbox"
+                            id="headaches"
+                           name="inp">Headaches</input></label><br>
+
+
+                <!-- Mental Symptoms Label -->
+                <div class="form-control">
+                    <label>Are you experiencing any of these mental symptoms? <br>
+                        <small>(Check all that apply!)</small>
+                    </label> 
+                
+                <!-- Input Type Checkbox Physical Symptoms -->
+                <label for="depression">
+                    <input type="checkbox"
+                            id="depression"
+                           name="inp">Depression</input></label>
+                <label for="anxiety">
+                    <input type="checkbox"
+                            id="anxiety"
+                           name="inp">Anxiety</input></label>
+                <label for="mood-swings">
+                    <input type="checkbox"
+                            id="modd-swings"
+                           name="inp">Mood Swings</input></label>
+                <label for="sleep">
+                    <input type="checkbox"
+                            id="poor-sleeping-patterns"
+                           name="inp">Poor Sleeping Patterns</input></label>
+                
+            </div>
+      
+      
+            <!-- Multi-line Text Input Control -->
+            <button id= "survey-button" type="submit" value="submit">
+                Submit!
+            </button>
+        </form>
+    </body>
+    </div>
+    </html>
+</body>
+</html>
+
