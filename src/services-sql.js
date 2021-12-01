@@ -63,15 +63,14 @@ var services = function(app) {
                 if(results.length > 0){
                     console.log("User login found");
                     console.log("Return data: " + JSON.stringify(results));
-                //req.session.loggedinUser = true;
-                //req.session.email = email;
+                
                     return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
                 }   
                 else {
                     console.log("User login failed");
+                    //ADD A POP UP FOR "INVALID EMAIL/PASSWORD!" or "YOU HAVE NOT SUCCESSFULLY REGISTERED YET!"
                 
-                //send output message to the user that they are not a registered user yet and need to register
-               // window.alert("You have not registered yet!");   //doesnt work
+             
                     return res.status(200).send(JSON.stringify({msg: "Failed"}));
                 
                 }
@@ -79,37 +78,114 @@ var services = function(app) {
             })
         });
 
+    // PUT function for UPDATING user data based off of user_id from register/login info
     app.put('/survey-page', function(req, res, next) {
+
+        var user_id = req.body.user_id;
         var userData = {
-            user_id: req.query.user_id,
-            user_first_name: req.query.user_first_name,
-            user_last_name: req.query.user_last_name,
-            user_age: req.query.user_age,
-            user_height: req.query.user_height,
-            user_weight: req.query.user_weight
+            user_first_name: req.body.user_first_name,
+            user_last_name: req.body.user_last_name,
+            user_gender_male: req.body.user_gender_male,
+            user_gender_female: req.body.user_gender_female,
+            user_age: req.body.user_age,
+            user_height: req.body.user_height,
+            user_weight: req.body.user_weight,
+            exercise_level_dropdown: req.body.exercise_level_dropdown
         };
-            console.log("User info: " + JSON.stringify(userData));
+            console.log(user_id);
+            console.log(userData);
+            console.log("User info: " + JSON.stringify(user_id, userData));
             //updating user table with new info based off of user_id from loginRegister
-            //not sure if code is right!!!
-            connection.query('UPDATE user SET ? WHERE user_id = ?', userData, function(err, rows) {
-
+           
+            connection.query('UPDATE user SET ? WHERE user_id = ?', [userData, user_id], function(err) {
                 console.log("Survey callback")
-
                 if(err) {
                     return res.status(200).send(JSON.stringify({msg: "Error: " + err}));;
                 } 
                 else {
-                    console.log("Inserting new data into user table");
-                    console.log("New data inserted: " + JSON.stringify(rows));
-              
-                    return res.status(201).send(JSON.stringify({msg:"SUCCESS", userData:rows}));
+                    console.log("Updating new data into user table");
+                    console.log("New user info updated to user table: " + JSON.stringify(userData));
+                    
+                    
+                    return res.status(201).send(JSON.stringify({msg:"SUCCESS"}));
+                    
                 }
             });
         });
-    };
+    
+
+    // POST function for inserting physical/mental survey symptoms
+    app.post('/survey-page', function(req, res, next) {
+
+        var surveyData = {
+            user_id: req.body.user_id,
+            muscle_aches: req.body.muscle_aches,
+            fatigue: req.body.fatigue,
+            gi_issues: req.body.gi_issues,
+            headaches: req.body.headaches,
+            depression: req.body.depression,
+            anxiety: req.body.anxiety,
+            mood_swings: req.body.mood_swings,
+            sleep: req.body.sleep
+        };
+        console.log(surveyData);
+        console.log("Inserting data");
+
+        connection.query('INSERT INTO survey SET ?', surveyData, function(err){
+            if(err) {
+                console.log("Insert error " + err);
+                return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
+            } 
+            else {
+                console.log("Inserted symtpoms into survey table");
+
+                console.log("Newly inserted data to survey table: " + JSON.stringify(surveyData));
+                        
+                return res.status(201).send(JSON.stringify({msg: "SUCCESS!"}));
+            }
+        })
+
+    });
+
+
+    app.get('/meal-plan', function(req, res, next) {
+ 
+        var bmrData = {
+            user_id: req.body.user_id,
+            user_age: req.body.user_age,
+            user_height: req.body.user_height,
+            user_weight: req.body.user_weight 
+        };
+        console.log(bmrData);
+        console.log("Inserting BMR data");
+
+        connection.query('SELECT * FROM user WHERE id = ? AND user_age = ? AND user_height = ? AND user_weight = ? ', bmrData, function(err){
+            if(err) {
+                console.log("Select error " + err);
+                return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
+            } 
+            else {
+                console.log("Selected correct columns from user table");
+
+                console.log("Selected columns from user table: " + JSON.stringify(bmrData));
+                        
+                return res.status(201).send(JSON.stringify({msg: "SUCCESS!"}));
+            }
+        })
+    })
+
+
+};
+
+
+
 
 module.exports = services;
 
 // app.get() and app.post() CANT have the same name
 
 //put statement (update users (all data input) where user_id = (the user_id that user brought over))
+
+//change gender to true/false
+//alter dropdown box
+//update db accordingly (update data)

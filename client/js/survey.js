@@ -1,58 +1,65 @@
-console.log("User_id: " + localStorage.getItem("user_id"));
 
-$('#survey-button').click(function() {
-    var firstName = $('#first-name').val();
-    var lastName = $('#last-name').val();
-    var male = $('#male').val();
-    var female = $('#female').val();
-    var age = $('#age').val();
-    var height = $('#height').val();
-    var weight = $('#weight').val();
-    var notActive = $('#not-active').val();
-    var moderate = $('#moderate').val();
-    var active = $('#active').val();
-    var muscleAches = $('#muscle-aches').val();
-    var fatigue = $('#fatigue').val();
-    var giIssues = $('#gi-issues').val();
-    var headaches = $('#headaches').val();
-    var depression = $('#depression').val();
-    var anxiety = $('#anxiety').val();
-    var moodSwings = $('#mood-swings').val();
-    var poorSleepingPatterns = $('#poor-sleeping-patterns').val();
+$('#survey-button').click(function() {          //retrieving values on submit
+    var user_first_name = $('#first-name').val();
+    var user_last_name = $('#last-name').val();
+    var user_gender_male = $('#male').is(':checked');
+    var user_gender_female = $('#female').is(':checked');
+    var user_age = $('#age').val();
+    var user_height = $('#height').val();
+    var user_weight = $('#weight').val();
+    var exercise_level_dropdown = $('#exercise-level-dropdown').val();
 
-    var jsonString = {
-        firstName: firstName,
-        lastName: lastName,
-        male: male,
-        female: female,
-        age: age,
-        height: height,
-        weight: weight,
-        notActive: notActive,
-        moderate: moderate,
-        active: active,
-        muscleAches: muscleAches,
+    var muscle_aches = $('#muscle-aches').is(':checked');
+    var fatigue = $('#fatigue').is(':checked');
+    var gi_issues = $('#gi-issues').is(':checked');
+    var headaches = $('#headaches').is(':checked');
+    var depression = $('#depression').is(':checked');
+    var anxiety = $('#anxiety').is(':checked');
+    var mood_swings = $('#mood-swings').is(':checked');
+    var sleep = $('#sleep').is(':checked');
+
+    var jsonUserData = {
+        user_id: localStorage.getItem("user_id"),   //taking user_id corresponding with user login
+        user_first_name: user_first_name,
+        user_last_name: user_last_name,
+        user_gender_male: user_gender_male,
+        user_gender_female: user_gender_female,
+        user_age: user_age,
+        user_height: user_height,
+        user_weight: user_weight,
+        exercise_level_dropdown: exercise_level_dropdown
+        
+    }
+
+    var jsonSurveyData = {
+        user_id: localStorage.getItem("user_id"),
+        muscle_aches: muscle_aches,
         fatigue: fatigue,
-        giIssues: giIssues,
+        gi_issues: gi_issues,
         headaches: headaches,
         depression: depression,
         anxiety: anxiety,
-        moodSwings: moodSwings,
-        poorSleepingPatterns: poorSleepingPatterns
+        mood_swings: mood_swings,
+        sleep: sleep
     }
     
+    console.log(jsonUserData);
+    console.log(jsonSurveyData);
     console.log("Survey submit button fired");
-    $.ajax ({
-        url: 'http://localhost:2161/survey',
-        type: 'get',
-        data: jsonString,
+                                           
+    $.ajax ({                                        //ajax call for app.put('/survey-page') 
+        url: 'http://localhost:2161/survey-page',
+        type: 'put',
+        data: jsonUserData,
         success: function(response) {
             var data = JSON.parse(response);
             if (data.msg === "SUCCESS!") {
                 console.log("Submit success");
-               // loginInfo(jsonString);      ////connection to the server function for register
+                
+                window.location.replace('http://localhost:2161/mealPlan');
+               
             } else if (data.msg === "Failed") {
-                // Login invalid (change for survey?)
+                
             } else {
                 alert(data.msg);
             }
@@ -60,6 +67,43 @@ $('#survey-button').click(function() {
         },
         error: function(err) {
             alert(err);
-        }
-    })
-})
+         }
+     });
+
+    // function insertSurvey(jsonSurveyData) {
+        $.ajax ({                                   //ajax call for app.post('/survey')
+            url: 'http://localhost:2161/survey-page',
+            type: 'post',
+            data: jsonSurveyData,
+            success: function(response) {
+                var data = JSON.parse(response);
+                if (data.msg === "SUCCESS!") {
+                    console.log("Submit success");
+                    localStorage.setItem("user_id" , data.data[0].user_id);
+
+                    location.assign('http://localhost:2161/mealPlan');
+                } else {
+                    alert(data.msg);
+                }
+               
+            },
+            error: function(err) {
+                alert(err);
+            }
+       
+        });
+  //  };
+
+
+  
+  
+      return false;
+ });
+
+
+
+
+// $('#form').submit(function(){
+//     return false;
+// })
+

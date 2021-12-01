@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Connection to CSS for Meal Plan -->
+    <link rel="stylesheet" href="/client/css/mealPlan.css"> 
+    <!-- Connection to JS for Meal Plan -->
+    <script src="/client/js/mealPlan.js" async></script> 
+    <!-- Connection to JS for Meal Plan Calculations -->
+    <script src="/client/js/mealPlanCalulations.js" async></script> 
+    <!-- Connection to AJAX for Meal Plan -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Meal Plan Page</title>
+
+    <script>
+        var customerName = prompt("Please enter your name", " ");
+        if (customerName!= null){
+            document.getElementById("username").value = customerName;
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text" id="username"/>
+    Meal Plan
+    
+
+</body>
+</html>

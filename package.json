@@ -14,11 +14,11 @@
   "author": "Amanda Gallaro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amandagallaro/NutritionWebApp/issues"  
-
+    "url": "https://github.com/amandagallaro/NutritionWebApp/issues"
   },
   "homepage": "https://github.com/amandagallaro/NutritionWebApp#readme",
   "dependencies": {
+    "alert": "^5.0.10",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",

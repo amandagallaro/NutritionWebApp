@@ -68,7 +68,7 @@ function loginInfo (jsonString) {
                 console.log("Login success");
                 localStorage.setItem("user_id" , data.data[0].user_id);
                 
-                location.assign('http://localhost:2161/survey');    //send user to survey
+                window.location.assign('http://localhost:2161/survey');    //send user to survey
             } else if (data.msg === "Failed") {
                 // Login invalid
             } else {

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/client/css/survey.css">
-    <script src='/client/css/survey.css' async></script>  
+    <link rel="stylesheet" href="/client/css/survey.css"> 
     <script src="/client/js/survey.js" async></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,14 +13,14 @@
     <title>Survey Form</title>
 </head>
 <body>
-    <!-- 'survey' for app.get() res.sendFile in services-sql.js -->
+    
     <div class="survey">
     <body>
         <h1>Nuritional Survey</h1>
         <h2>Please fill out the following!</h2>
         
         <!-- Create Form; 'survey-page' for app.post() in services-sql.js -->
-        <form id="form" action="survey">
+        <form id="form" >
      
             <!-- Details -->
         
@@ -108,10 +107,10 @@
                 </label>
                  
                 <!-- Exercise Level Dropdown options -->
-                <select name="exercise-level" id="exerise-level">
-                    <option id="not-active" value="not-active"> Not Active </option>
-                    <option id="moderate" value="moderate"> Moderate </option>
-                    <option id="active" value="active"> Active </option>
+                <select name="exercise-level" id="exercise-level-dropdown">
+                    <option value="not-active"> Not Active </option>
+                    <option value="moderate"> Moderate </option>
+                    <option value="active"> Active </option>
                 </select><br>
             </div>
             
@@ -125,11 +124,11 @@
                 <label for="muscle-aches">
                     <input type="checkbox"
                             id="muscle-aches"
-                           name="inp">Muscle Aches</input></label>
+                           name="muscle-aches">Muscle Aches</input></label>
                 <label for="fatigue">
                     <input type="checkbox"
                             id="fatigue"
-                           name="inp">Fatigue</input></label>
+                           name="fatigue">Fatigue</input></label>
                 <label for="GI-issues">
                     <input type="checkbox"
                             id="gi-issues"
@@ -157,18 +156,18 @@
                            name="inp">Anxiety</input></label>
                 <label for="mood-swings">
                     <input type="checkbox"
-                            id="modd-swings"
+                            id="mood-swings"
                            name="inp">Mood Swings</input></label>
                 <label for="sleep">
                     <input type="checkbox"
-                            id="poor-sleeping-patterns"
+                            id="sleep"
                            name="inp">Poor Sleeping Patterns</input></label>
                 
             </div>
       
       
             <!-- Multi-line Text Input Control -->
-            <button id= "survey-button" type="submit" value="submit">
+            <button id= "survey-button">
                 Submit!
             </button>
         </form>
