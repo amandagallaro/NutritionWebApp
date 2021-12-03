@@ -1,3 +1,4 @@
+const { response } = require('express');
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -148,7 +149,7 @@ var services = function(app) {
     });
 
 
-    app.get('/meal-plan', function(req, res, next) {
+    app.post('/survey-BMR', function(req, res, next) {
  
         var bmrData = {
             user_id: req.body.user_id,
@@ -168,11 +169,13 @@ var services = function(app) {
                 console.log("Selected correct columns from user table");
 
                 console.log("Selected columns from user table: " + JSON.stringify(bmrData));
+                response.send(bmrData);
                         
                 return res.status(201).send(JSON.stringify({msg: "SUCCESS!"}));
             }
         })
-    })
+    });
+
 
 
 };

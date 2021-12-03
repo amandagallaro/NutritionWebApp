@@ -16,16 +16,28 @@
 
     <title>Meal Plan Page</title>
 
-    <script>
-        var customerName = prompt("Please enter your name", " ");
-        if (customerName!= null){
-            document.getElementById("username").value = customerName;
-        }
-    </script>
+    
 </head>
 <body>
+    <!-- <form action= "/survey-page" method="get">
+        <table type="text" name="age"></table>
+        <table type="text" name="height"></table>
+        <table type="text" name="weight"></table>
+        <table type="text" name="gender-male"></table>
+        <table type="text" name="gender-female"></table>
+    </form> -->
+    <table id="BMRTable">
+        <tr>
+            <th> User ID </th>
+            <th> Male BMR </th>
+            <th> Female BMR </th>
+        </tr>
 
-    <input type="text" id="username"/>
+    </table>
+
+    <a href="#" id="get-data"> Get JSON data</a>
+    <div id="show-data"></div>
+    <div id="test"> Meal Plan </div>
     Meal Plan
     
 

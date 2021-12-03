@@ -1,0 +1,14 @@
+table{
+    width: 50%;
+}
+
+th {
+    background: #f1f1f1;
+    font-weight: bold;
+    padding: 6px;
+}
+
+td {
+    background: #f9f9f9;
+    padding: 6px;
+}

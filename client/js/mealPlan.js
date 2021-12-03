@@ -23,25 +23,27 @@ $('#survey-button').click(function BMRCalculator(){
 
     var jsonBMRData = {
         user_id: localStorage.getItem("user_id"),
+        maleBMR: maleBMR,
+        femaleBMR: femaleBMR
         // user_age: user_age,
         // user_height: user_height,
         // user_weight: user_weight,
         // user_gender_male: user_gender_male,
         // user_gender_female: user_gender_female
-        maleBMR: maleBMR,
-        femaleBMR: femaleBMR
-
     }
 
     $.ajax ({                                         
-        url: 'http://localhost:2161/mealPlan',
+        url: 'http://localhost:2161/survey-page',
         type: 'get',
         data: jsonBMRData,
         success: function(response) {
             var data = JSON.parse(response);
             if (data.msg === "SUCCESS!") {
                 console.log("Submit success");
+                console.log(jsonBMRData);
+                $("#test").html(jsonBMRData);
      //           insertSurvey(jsonSurveyData);
+                location.assign('http://localhost:2161/mealPlan');
                
             } else if (data.msg === "Failed") {
                 
