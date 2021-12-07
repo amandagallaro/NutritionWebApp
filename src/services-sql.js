@@ -161,7 +161,7 @@ var services = function(app) {
         console.log(user_id);
         console.log("Inserting BMR data");
 
-        connection.query("SELECT * FROM user WHERE user_id = ?", user_id, function(err, results){
+        connection.query("SELECT * FROM user WHERE user_id = ?", [user_id], function(err, results){
             if(err) {
                 console.log("Select error " + err);
                 return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
@@ -174,7 +174,7 @@ var services = function(app) {
                         
                 return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
             }
-        })
+        });
     });
 
 
