@@ -29,6 +29,7 @@ var services = function(app) {
             if (rows.length > 0) {
                // window(JSON.stringify(alert("You have already registered with this email!")));  //doesnt work
                 console.log("User exists");
+                
                 return res.status(201).send(JSON.stringify({msg: "Failed"}));
                 
             }
@@ -149,18 +150,18 @@ var services = function(app) {
     });
 
 
-    app.post('/survey-BMR', function(req, res, next) {
- 
-        var bmrData = {
-            user_id: req.body.user_id,
-            user_age: req.body.user_age,
-            user_height: req.body.user_height,
-            user_weight: req.body.user_weight 
-        };
-        console.log(bmrData);
+    app.get('/mealPlan-info', function(req, res, next) {
+        var user_id = req.body.user_id;
+        // var bmrData = {
+        //     user_id: req.body.user_id,
+        //     user_age: req.body.user_age,
+        //     user_height: req.body.user_height,
+        //     user_weight: req.body.user_weight 
+        // };
+        console.log(user_id);
         console.log("Inserting BMR data");
 
-        connection.query('SELECT * FROM user WHERE id = ? AND user_age = ? AND user_height = ? AND user_weight = ? ', bmrData, function(err){
+        connection.query("SELECT * FROM user WHERE user_id = ?", user_id, function(err, results){
             if(err) {
                 console.log("Select error " + err);
                 return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
@@ -168,10 +169,10 @@ var services = function(app) {
             else {
                 console.log("Selected correct columns from user table");
 
-                console.log("Selected columns from user table: " + JSON.stringify(bmrData));
-                response.send(bmrData);
+                console.log("Selected columns from user table: " + JSON.stringify(user_id));
+                //response.send(bmrData);
                         
-                return res.status(201).send(JSON.stringify({msg: "SUCCESS!"}));
+                return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
             }
         })
     });

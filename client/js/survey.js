@@ -30,6 +30,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
         exercise_level_dropdown: exercise_level_dropdown
         
     }
+    
 
     var jsonSurveyData = {
         user_id: localStorage.getItem("user_id"),
@@ -42,10 +43,12 @@ $('#survey-button').click(function() {          //retrieving values on submit
         mood_swings: mood_swings,
         sleep: sleep
     }
+   
     
     console.log(jsonUserData);
     console.log(jsonSurveyData);
     console.log("Survey submit button fired");
+   
                                            
     $.ajax ({                                        //ajax call for app.put('/survey-page') 
         url: 'http://localhost:2161/survey-page',
@@ -55,6 +58,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
             var data = JSON.parse(response);
             if (data.msg === "SUCCESS!") {
                 console.log("Submit success");
+              //  sendData(jsonUserData, jsonSurveyData);
                 
             //    window.location.replace('http://localhost:2161/mealPlan');
                
@@ -79,9 +83,10 @@ $('#survey-button').click(function() {          //retrieving values on submit
                 var data = JSON.parse(response);
                 if (data.msg === "SUCCESS!") {
                     console.log("Submit success");
+                   // sendData(jsonUserData, jsonSurveyData);
                     //localStorage.setItem("user_id" , data.data[0].user_id);
 
-                   // location.assign('http://localhost:2161/mealPlan');
+                   location.assign('http://localhost:2161/mealPlan');
                 } else {
                     alert(data.msg);
                 }
@@ -93,62 +98,33 @@ $('#survey-button').click(function() {          //retrieving values on submit
        
         });
 
-
-        if(user_gender_male){
-            var maleBMR;
-            maleBMR = (13.397 * user_weight) + (4.799 * user_height) - (5.677 * user_age) + 88.362;
-            return maleBMR;
-        }
-        else if(user_gender_female){
-            var femaleBMR;
-            femaleBMR = (9.247 * user_weight) + (3.098 * user_height) - (4.330 * user_age) + 447.593;
-            return femaleBMR;
-        }
-        else{
-    
-        }
-    
-        var jsonBMRData = {
-            user_id: localStorage.getItem("user_id"),
-            maleBMR: maleBMR,
-            femaleBMR: femaleBMR
-            // user_age: user_age,
-            // user_height: user_height,
-            // user_weight: user_weight,
-            // user_gender_male: user_gender_male,
-            // user_gender_female: user_gender_female
-        }
-    
-        $.ajax ({                                         
-            url: 'http://localhost:2161/survey-page',
-            type: 'get',
-            data: jsonBMRData,
-            success: function(response) {
-                var data = JSON.parse(response);
-                if (data.msg === "SUCCESS!") {
-                    console.log("Submit success");
-                    console.log(jsonBMRData);
-                    $("#test").html(jsonBMRData);
-         //           insertSurvey(jsonSurveyData);
-                    location.assign('http://localhost:2161/mealPlan');
-                   
-                } else if (data.msg === "Failed") {
-                    
-                } else {
-                    alert(data.msg);
-                }
-                
-            },
-            error: function(err) {
-                alert(err);
-             }
-         });
-
-
   
-  
-      return false;
+     return false;
  });
+
+//  function sendData (jsonUserData, jsonSurveyData) {
+//     $.ajax ({
+//         url: 'http://localhost:2161/survey',
+//         type: 'get',
+//         data: [jsonUserData, jsonSurveyData],
+//         success: function(response) {
+//             var data = JSON.parse(response);
+//             if (data.msg === "SUCCESS!") {
+//                 console.log("Survey submit success");
+//                 localStorage.setItem("user_id" , data.data[0].user_id);
+                
+//                 window.location.assign('http://localhost:2161/mealPlan');    //send user and specified data to Meal Plan
+//             } else if (data.msg === "Failed") {
+//                 // Login invalid
+//             } else {
+//                 alert(data.msg);
+//             }  
+//         },
+//         error: function(err) {
+//             alert(err);
+//         }
+//     })
+// }
 
 
 
