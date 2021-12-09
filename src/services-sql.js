@@ -150,14 +150,9 @@ var services = function(app) {
     });
 
 
-    app.get('/mealPlan-info', function(req, res, next) {
+    app.get('/mealPlan-bmr', function(req, res, next) {
         var user_id = req.query.user_id;
-        // var bmrData = {
-        //     user_id: req.body.user_id,
-        //     user_age: req.body.user_age,
-        //     user_height: req.body.user_height,
-        //     user_weight: req.body.user_weight 
-        // };
+       
         console.log(user_id);
         console.log("Inserting BMR data");
 
@@ -170,12 +165,41 @@ var services = function(app) {
                 console.log("Selected correct columns from user table");
 
                 console.log("Selected columns from user table: " + JSON.stringify(user_id));
-                //response.send(bmrData);
+               
                         
                 return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
             }
         });
     });
+
+
+    app.get('/mealPlan-survey', function(req, res, next) {
+        var user_id = req.query.user_id;
+        // var bmrData = {
+        //     user_id: req.body.user_id,
+        //     user_age: req.body.user_age,
+        //     user_height: req.body.user_height,
+        //     user_weight: req.body.user_weight 
+        // };
+        console.log(user_id);
+        console.log("Inserting survey data");
+
+        connection.query("SELECT * FROM survey WHERE user_id = ?", [user_id], function(err, results){
+            if(err) {
+                console.log("Select error " + err);
+                return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
+            } 
+            else {
+                console.log("Selected correct columns from survey table");
+
+                console.log("Selected columns from survey table: " + JSON.stringify(user_id));
+                
+                        
+                return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
+            }
+        });
+    });
+
 
 };
 
