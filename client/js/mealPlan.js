@@ -70,11 +70,7 @@ $.ajax ({
             female_bmr = Math.round((9.247 * jsonBMRData[0].user_weight) + (3.098 * jsonBMRData[0].user_height) - (4.330 * jsonBMRData[0].user_age) + 447.593);
             console.log("Female BMR has been calculated");
             return document.getElementsByClassName('female-bmr')[0].innerHTML = female_bmr + " calories";
-            
-        }
-        
-        
-        
+        }   
         
     };
 
@@ -158,37 +154,44 @@ $.ajax ({
     // };
 
     function foodSuggestions( jsonBMRData ) {
-        if (jsonBMRData[0].muscle_aches == true){
-            console.log("Muscle Aches was selected");
+        if (jsonBMRData[0].muscle_aches){
+            console.log("Muscle Aches was selected by user");
             var muscleAchesFood = "Salmon";
-            return document.getElementsByClassName('muscle-aches')[0].innerHTML = muscleAchesFood + "food";
+            return document.getElementsByClassName('muscle-aches')[0].innerHTML = muscleAchesFood;
         }
-        else if (jsonBMRData[0].fatigue == true){
+        
+        if (jsonBMRData[0].fatigue){
+            console.log("Fatigue was selected by user");
             var fatigueFood;
             fatigueFood = "Bananas";
             return document.getElementsByClassName('fatigue')[0].innerHTML = fatigueFood;
         }
-        else if (jsonBMRData[0].gi_issues == true) {
+        if (jsonBMRData[0].gi_issues) {
+            console.log("GI Issues was selected by user")
             var giIssuesFood;
             giIssuesFood = "Apples";
             return document.getElementsByClassName('gi-issues')[0].innerHTML = giIssuesFood;
         }
-        else if (jsonBMRData[0].headaches == true) {
+        if (jsonBMRData[0].headaches) {
+            console.log("Headaches was selected by user")
             var headachesFood;
             headachesFood = "Brown Rice";
             return document.getElementsByClassName('headaches')[0].innerHTML = headachesFood;
         }
-        else if (jsonBMRData[0].depression == true) {
+        if (jsonBMRData[0].depression) {
+            console.log("Depression was selected by user");
             var depressionFood;
             depressionFood = "Salmon";
             return document.getElementsByClassName('depression')[0].innerHTML = depressionFood;
         }
-        else if (jsonBMRData[0].anxiety == true) {
+        if (jsonBMRData[0].anxiety) {
+            console.log("Anxiety was selected by user");
             var anxietyFood;
             anxietyFood = "Salmon";
             return document.getElementsByClassName('anxiety')[0].innerHTML = anxietyFood;
         }
-        else if (jsonBMRData[0].mood_swings == true) {
+        if (jsonBMRData[0].mood_swings) {
+            console.log("Mood Swings was selected by user");
             var moodSwingsFood;
             moodSwingsFood = "Salmon";
             return document.getElementsByClassName('mood-swings')[0].innerHTML = moodSwingsFood;
