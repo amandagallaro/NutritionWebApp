@@ -1,7 +1,12 @@
 var jsonBMRData = {
     user_id: localStorage.getItem("user_id")
+    // user_gender_male: localStorage.getItem("user_gender_male"),
+    // user_gender_female: localStorage.getItem("user_gender_female"),
+    // user_age: localStorage.getItem("user_age"),
+    // user_height: localStorage.getItem("user_height"),
+    // user_weight: localStorage.getItem("user_weight")
 }
-BMRCalculations(jsonBMRData);
+
 $.ajax ({                                         
     url: 'http://localhost:2161/mealPlan-info',
     type: 'get',
@@ -11,7 +16,7 @@ $.ajax ({
         if (returnData.msg === "SUCCESS!") {
            // console.log("Submit success");
            // localStorage.setItem("user_id" , returnData.data[0].user_id);
-            console.log(JSON.stringify(returnData.data));
+            console.log(JSON.stringify(returnData.data[0].user_id));
             BMRCalculations(jsonBMRData);
             //BMRCalculations(returnData.data);
             $("#get-data").html(jsonBMRData);
@@ -53,20 +58,20 @@ $.ajax ({
 
 // });
 
-     function BMRCalculations(jsonBMRData) {
-        if(jsonBMRData[true].user_gender_male){
+    function BMRCalculations( jsonBMRData ) {
+        if(jsonBMRData[0].user_gender_male){
             var male_bmr;
             male_bmr = (13.397 * jsonBMRData[0].user_weight) + (4.799 * jsonBMRData[0].user_height) - (5.677 * jsonBMRData[0].user_age) + 88.362;
             console.log("Male BMR has been calculated");
             return male_bmr;
         }
-        else if(jsonBMRData[true].user_gender_female){
+        else if(jsonBMRData[0].user_gender_female) {
             var female_bmr;
             female_bmr = (9.247 * jsonBMRData[0].user_weight) + (3.098 * jsonBMRData[0].user_height) - (4.330 * jsonBMRData[0].user_age) + 447.593;
             console.log("Female BMR has been calculated");
             return female_bmr;
         }
-        else{
+        else {
             
         }
     };

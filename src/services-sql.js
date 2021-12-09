@@ -151,7 +151,7 @@ var services = function(app) {
 
 
     app.get('/mealPlan-info', function(req, res, next) {
-        var user_id = req.body.user_id;
+        var user_id = req.query.user_id;
         // var bmrData = {
         //     user_id: req.body.user_id,
         //     user_age: req.body.user_age,
@@ -176,8 +176,6 @@ var services = function(app) {
             }
         });
     });
-
-
 
 };
 
