@@ -14,7 +14,11 @@ $.ajax ({
            // localStorage.setItem("user_id" , returnData.data[0].user_id);
             console.log(JSON.stringify(returnData.data[0].user_id));
             //BMRCalculations(jsonBMRData);
+
+
             BMRCalculations(returnData.data);
+
+
             //$("#get-data").html(returnData.data);
  //           insertSurvey(jsonSurveyData);
            
@@ -33,18 +37,25 @@ $.ajax ({
 });
 
     function BMRCalculations( jsonBMRData ) {
-        if(jsonBMRData[0].user_gender_male == true){
+
+        if(jsonBMRData[0].user_gender_male) {
             var male_bmr;
             male_bmr = Math.round((13.397 * jsonBMRData[0].user_weight) + (4.799 * jsonBMRData[0].user_height) - (5.677 * jsonBMRData[0].user_age) + 88.362);
             console.log("Male BMR has been calculated");
             return document.getElementsByClassName('male-bmr')[0].innerHTML = male_bmr + " calories";
+            
         }
-        else { 
+        else if (jsonBMRData[0].user_gender_female) {
             var female_bmr;
             female_bmr = Math.round((9.247 * jsonBMRData[0].user_weight) + (3.098 * jsonBMRData[0].user_height) - (4.330 * jsonBMRData[0].user_age) + 447.593);
             console.log("Female BMR has been calculated");
             return document.getElementsByClassName('female-bmr')[0].innerHTML = female_bmr + " calories";
+            
         }
+        
+        
+        
+        
     };
 
 
@@ -170,7 +181,5 @@ $.ajax ({
 
 
     
-
-
 
 
