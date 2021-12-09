@@ -37,8 +37,28 @@ $.ajax ({
 });
 
     function BMRCalculations( jsonBMRData ) {
+        // var male_bmr;
+        // male_bmr = Math.round((13.397 * jsonBMRData[0].user_weight) + (4.799 * jsonBMRData[0].user_height) - (5.677 * jsonBMRData[0].user_age) + 88.362);
+        // //console.log("Male BMR has been calculated");
+        
+        // var female_bmr;
+        // female_bmr = Math.round((9.247 * jsonBMRData[0].user_weight) + (3.098 * jsonBMRData[0].user_height) - (4.330 * jsonBMRData[0].user_age) + 447.593);
+        //     //console.log("Female BMR has been calculated");
+            
+
+        // if (jsonBMRData[0].user_gender_male == true) {
+        //     console.log("Male BMR has been calculated");
+        //     document.getElementsByClassName('male-bmr')[0].innerHTML = male_bmr + " calories";
+        // }
+        
+        // else if (jsonBMRData[0].user_gender_female) {
+        //     console.log("Female BMR has been calculated");
+        //     document.getElementsByClassName('female-bmr')[0].innerHTML = female_bmr + " calories";
+            
+        // }
 
         if(jsonBMRData[0].user_gender_male) {
+
             var male_bmr;
             male_bmr = Math.round((13.397 * jsonBMRData[0].user_weight) + (4.799 * jsonBMRData[0].user_height) - (5.677 * jsonBMRData[0].user_age) + 88.362);
             console.log("Male BMR has been calculated");
