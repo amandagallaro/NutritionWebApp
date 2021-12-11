@@ -1,26 +1,66 @@
 body {
-    background:#8a248a;
+    background: #3a7bd5;  /* fallback for old browsers */
+    
+
+    font-family:'Bad Script', cursive;
+    font-weight: bolder;
 }
 
-form {
-    background: #b61515;
+.congratulations {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    
+}
+
+.form {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #83a4d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .bmr-label{
     display: block;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: center;
     font-size: 25px; 
     
 }
 
 .food-suggestions-label{
     display: block;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: center;
     font-size: 25px;
+}
+
+
+.meal-plan-label {
+    display: block;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    
+
+}
+
+.physical-table-label {
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    
+}
+
+.mental-table-label {
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    
 }
 
 .BMR-Calculator table{
@@ -57,4 +97,24 @@ form {
 
     
 }
+
+.personal-table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.physical-table{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.mental-table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 

@@ -19,12 +19,12 @@
     
 </head>
 <body>
-    <form class="Personal-Info">
+    <form class="form">
       
     <h1 class="congratulations"> </h1>
-    <h2>This is what we've gathered from you</h2>
+    <h2 class="text">This is what we've gathered from you</h2>
       <h3>
-      <table>
+      <table class="personal-table">
             <td class="gender-label">Gender: </td>
             <td class="gender"> </td>
         </tr>
@@ -47,25 +47,25 @@
         </table>
       </h3>
       <h3>
-        <table>
-            <label>Your Physical Symptoms</label>
-            <td class="muscle-aches-yes"></td>
-            <td class="fatigue-yes"></td>
-            <td class="gi-issues-yes"></td>
-            <td class="headaches-yes"></td>
-            <td class="no-phys-symptoms-yes"></td>
+        <table class="physical-table">
+            <label class="physical-table-label">Your Physical Symptoms: </label>
+            <tr>
+                <td class="muscle-aches-yes"></td>
+                <td class="fatigue-yes"></td>
+                <td class="gi-issues-yes"></td>
+                <td class="headaches-yes"></td>
+                <td class="no-phys-symptoms-yes"></td>
+            </tr>
         </table>
-        <table>
-            <label>Your Mental Symptoms</label>
+        <table class="mental-table">
+            <label class="mental-table-label">Your Mental Symptoms: </label>
             <td class="depression-yes"></td>
             <td class="anxiety-yes"></td>
             <td class="mood-swings-yes"></td>
             <td class="sleep-yes"></td>
         </table>
       </h3>
-    </form>
 
-<form>
 <div class="BMR-Calculator">
     <label class="bmr-label">Here is your suggested calorie intake!</label>
     <table> 
@@ -79,7 +79,7 @@
         <td class="female-bmr"> </td>
     </tr>
 
-    </table>
+    </table><br><br>
 </div>
 <div class="Food-Suggestions">
     <table>
@@ -116,10 +116,10 @@
         <td class="sleep-label">For Poor Sleeping Patterns: </td>
         <td class="sleep"> </td>
     </tr>
-    </table>
+    </table><br><br>
 
-    <table>
-        <label>Here is your suggested serving sizes</label>
+    <table class="meal-plan">
+        <label class="meal-plan-label">Here is your suggested serving sizes</label>
         <td class="cal8"> </td>
     </table>
 </div>
