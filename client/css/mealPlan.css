@@ -1,14 +1,60 @@
-table{
+body {
+    background:#8a248a;
+}
+
+form {
+    background: #b61515;
+}
+
+.bmr-label{
+    display: block;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px; 
+    
 }
 
-th {
-    background: #f1f1f1;
+.food-suggestions-label{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+
+.BMR-Calculator table{
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.Food-Suggestions table {
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.BMR-Calculator td {
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-weight: bold;
+    font-size: 20px;
     padding: 6px;
+    text-align: center;
+}
+.Food-Suggestions td {
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px;
+
+    
 }
 
-td {
-    background: #f9f9f9;
-    padding: 6px;
-}

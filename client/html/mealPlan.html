@@ -19,17 +19,56 @@
     
 </head>
 <body>
-    <!-- <form action= "/mealPlan" method="get">
-        <table type="text" name="age"></table>
-        <table type="text" name="height"></table>
-        <table type="text" name="weight"></table>
-        <table type="text" name="gender-male"></table>
-        <table type="text" name="gender-female"></table>
-    </form> -->
-    
+    <form class="Personal-Info">
+      
+    <h1 class="congratulations"> </h1>
+    <h2>This is what we've gathered from you</h2>
+      <h3>
+      <table>
+            <td class="gender-label">Gender: </td>
+            <td class="gender"> </td>
+        </tr>
+        <tr>
+            <td class="age-label">Age: </td>
+            <td class="age"> </td>
+        </tr>
+        <tr>
+            <td class="height-label">Height: </td>
+            <td class="height"></td>
+        </tr>
+        <tr>
+            <td class="weight-label">Weight: </td>
+            <td class="weight"> </td>   
+        </tr>
+        <tr>
+            <td class="exercise-level-label">Exercise Level: </td>
+            <td class="exercise-level"> </td>
+        </tr>
+        </table>
+      </h3>
+      <h3>
+        <table>
+            <label>Your Physical Symptoms</label>
+            <td class="muscle-aches-yes"></td>
+            <td class="fatigue-yes"></td>
+            <td class="gi-issues-yes"></td>
+            <td class="headaches-yes"></td>
+            <td class="no-phys-symptoms-yes"></td>
+        </table>
+        <table>
+            <label>Your Mental Symptoms</label>
+            <td class="depression-yes"></td>
+            <td class="anxiety-yes"></td>
+            <td class="mood-swings-yes"></td>
+            <td class="sleep-yes"></td>
+        </table>
+      </h3>
+    </form>
 
-    <table>
-        <caption>Here is your suggested calorie intake!</caption>
+<form>
+<div class="BMR-Calculator">
+    <label class="bmr-label">Here is your suggested calorie intake!</label>
+    <table> 
     <tr>
         <td class="male-bmr-label">Male BMR: </td>
         <td class="male-bmr"> </td>
@@ -41,10 +80,10 @@
     </tr>
 
     </table>
-
-    
+</div>
+<div class="Food-Suggestions">
     <table>
-        <caption>Here are suggestions of foods based off of your survey results!</caption>
+        <label class="food-suggestions-label">Here are suggestions of foods based off of your survey results!</label>
     <tr>
         <td class="muscle-aches-label">For Muscle Aches: </td>
         <td class="muscle-aches"> </td>
@@ -78,9 +117,13 @@
         <td class="sleep"> </td>
     </tr>
     </table>
-    <!-- <div id="male-bmr">Male BMR: </div>
-    <div id="female-bmr">Female BMR: </div>
-     -->
+
+    <table>
+        <label>Here is your suggested serving sizes</label>
+        <td class="cal8"> </td>
+    </table>
+</div>
+</form>    
     
 
 </body>

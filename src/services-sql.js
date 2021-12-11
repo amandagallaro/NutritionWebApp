@@ -164,7 +164,7 @@ var services = function(app) {
             else {
                 console.log("Selected correct columns from user table");
 
-                console.log("Selected columns from user table: " + JSON.stringify(user_id));
+                console.log("User ID: " + JSON.stringify(user_id));
                
                         
                 return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
@@ -192,7 +192,7 @@ var services = function(app) {
             else {
                 console.log("Selected correct columns from survey table");
 
-                console.log("Selected columns from survey table: " + JSON.stringify(user_id));
+                console.log("User ID: " + JSON.stringify(user_id));
                 
                         
                 return res.status(201).send(JSON.stringify({msg: "SUCCESS!", data: results}));
