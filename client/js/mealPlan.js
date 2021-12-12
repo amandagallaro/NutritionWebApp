@@ -98,12 +98,21 @@ $.ajax ({
                 console.log(JSON.stringify(returnData.data[0].user_id));
                 console.log("Producing food suggestions");
 
-                displayPhysicalSymptoms(returnData.data);
-                displayMentalSymptoms(returnData.data);
+                muscleAches(returnData.data);
+                fatigue(returnData.data);
+                giIssues(returnData.data);
+                headaches(returnData.data);
+                depression(returnData.data);
+                anxiety(returnData.data);
+                moodSwings(returnData.data);
+                sleep(returnData.data);
+
+                //displayPhysicalSymptoms(returnData.data);
+                //displayMentalSymptoms(returnData.data);
     
 
-                physicalFoodSuggestions(returnData.data);
-                mentalFoodSuggestions(returnData.data);
+                //physicalFoodSuggestions(returnData.data);
+                //mentalFoodSuggestions(returnData.data);
 
                 displayMealPlan(returnData.data);
                
@@ -121,45 +130,138 @@ $.ajax ({
         }
     });
 
-    function displayPhysicalSymptoms(jsonBMRData) {
+
+    function muscleAches(jsonBMRData) {
+        var muscle_aches = "Muscle Aches";
+        var salmon = "Salmon: ";
+        var cranberries = "Cranberries: ";
+
+
         if ((jsonBMRData[0].muscle_aches == "true")) {
-            var muscle_aches = "Muscle Aches";
-            return document.getElementsByClassName('muscle-aches-yes')[0].innerHTML = muscle_aches;    
-        }
-        else if((jsonBMRData[0].fatigue == "true")) {
-            var fatigue = "Fatigue";
-            return document.getElementsByClassName('fatigue-yes')[0].innerHTML = fatigue;
-
-        }
-        else if ((jsonBMRData[0].gi_issues == "true")) {
-            var gi_issues = "GI Issues";
-            return document.getElementsByClassName('gi-issues-yes')[0].innerHTML = gi_issues;
-        }
-        else if ((jsonBMRData[0].headaches == "true")) {
-            var headaches = "Headaches";
-            return document.getElementsByClassName('headaches-yes')[0].innerHTML = headaches;
+            console.log("Muscle aches was selected by user");
+            document.getElementsByClassName('muscle-aches-yes')[0].innerHTML = muscle_aches;
+            document.getElementsByClassName('muscle-aches-salmon')[0].innerHTML = salmon + "Salmon acts as an anti-inflammatory and is a great source of Omega-3 Fatty Acids. These properties will help with muscle aches or muscle pain.";
+            document.getElementsByClassName('muscle-aches-cranberries')[0].innerHTML = cranberries + "Cranberries can act as a natural NSAID(nonsteroidal anti-inflammatory drug), like ibuprofen or aspirin. They are also beneficial to pre and post-workout meals for supporting bone strength and repairing muscles.";
+            return muscle_aches + salmon + cranberries;  
         }
     };
 
-    function displayMentalSymptoms(jsonBMRData) {
+    function fatigue(jsonBMRData){
+        var fatigue = "Fatigue";
+
+        var bananas = "Bananas: ";
+        var almonds = "Almonds: ";
+
+        if((jsonBMRData[0].fatigue == "true")) {
+            console.log("Fatigue was selected by user");
+            document.getElementsByClassName('fatigue-yes')[0].innerHTML = fatigue;
+            document.getElementsByClassName('fatigue-bananas')[0].innerHTML = bananas;
+            document.getElementsByClassName('fatigue-almonds')[0].innerHTML = almonds;
+            return fatigue + bananas + almonds;
+        }
+    };
+
+    function giIssues(jsonBMRData){
+        var gi_issues = "GI Issues";
+
+        var oats = "Oats: ";
+        var yogurt = "Yogurt: ";
+
+        if ((jsonBMRData[0].gi_issues == "true")) {
+            console.log("GI Issues was selected by user");
+            document.getElementsByClassName('gi-issues-yes')[0].innerHTML = gi_issues;
+            document.getElementsByClassName('gi-issues-oats')[0].innerHTML = oats;
+            document.getElementsByClassName('gi-issues-yogurt')[0].innerHTML = yogurt;
+            return gi_issues + oats + yogurt;
+        }
+
+    };
+
+    function headaches(jsonBMRData){
+        var headaches = "Headaches";
+
+        var brown_rice = "Brown Rice: ";
+        var grapefruit = "Grapefruit: ";
+
+        if ((jsonBMRData[0].headaches == "true")) {
+            console.log("Headaches was selected by user");
+            document.getElementsByClassName('headaches-yes')[0].innerHTML = headaches;
+            document.getElementsByClassName('headaches-brown-rice')[0].innerHTML = brown_rice;
+            document.getElementsByClassName('headaches-grapefruit')[0].innerHTML = grapefruit;
+            return headaches + brown_rice + grapefruit;
+        }
+    };
+
+    function depression(jsonBMRData){
+        var depression = "Depression";
+
+        var walnuts = "Walnuts: ";
+        var chicken = "Chicken: ";
+
         if ((jsonBMRData[0].depression == "true")) {
-            var depression = "Depression";
-            return document.getElementsByClassName('depression-yes')[0].innerHTML = depression;    
-        }
-        else if ((jsonBMRData[0].anxiety == "true")) {
-            var anxiety = "Anxiety";
-            return document.getElementsByClassName('anxiety-yes')[0].innerHTML = anxiety;
-
-        }
-        else if ((jsonBMRData[0].mood_swings == "true")) {
-            var mood_swings = "Mood Swings";
-            return document.getElementsByClassName('mood-swings-yes')[0].innerHTML = mood_swings;
-        }
-        else if ((jsonBMRData[0].sleep == "true")) {
-            var sleep = "Poor Sleeping Patterns";
-            return document.getElementsByClassName('sleep-yes')[0].innerHTML = sleep;
+            console.log("Depression was selected by user");
+            document.getElementsByClassName('depression-yes')[0].innerHTML = depression;
+            document.getElementsByClassName('depression-walnuts')[0].innerHTML = walnuts + "Omega-3 Fatty Acids";
+            document.getElementsByClassName('depression-chicken')[0].innerHTML = chicken + "Tryptophan";
+            return depression + walnuts + chicken;    
         }
     };
+
+    function anxiety(jsonBMRData){
+        var anxiety = "Anxiety";
+
+        var spinach = "Spinach: ";
+        var oranges = "Oranges: ";
+
+        if ((jsonBMRData[0].anxiety == "true")) {
+            console.log("Anxiety was selected by user");
+            document.getElementsByClassName('anxiety-yes')[0].innerHTML = anxiety;
+            document.getElementsByClassName('anxiety-spinach')[0].innerHTML = spinach + "Magnesium";
+            document.getElementsByClassName('anxiety-oranges')[0].innerHTML = oranges + "Vitamin C";
+            return anxiety + spinach + oranges;
+        }
+
+    };
+
+    function moodSwings(jsonBMRData){
+        var mood_swings = "Mood Swings";
+
+        var chocolate = "Dark Chocolate";
+        var tea = "Green Tea";
+
+        if ((jsonBMRData[0].mood_swings == "true")) {
+            console.log("Mood Swings was selected by user");
+            document.getElementsByClassName('mood-swings-yes')[0].innerHTML = mood_swings;
+            document.getElementsByClassName('mood-swings-chocolate')[0].innerHTML = chocolate;
+            document.getElementsByClassName('mood-swings-tea')[0].innerHTML = tea + "L-Theanine";
+            return mood_swings + chocolate + tea;
+        }
+    };
+
+    function sleep(jsonBMRData){
+        var sleep = "Sleep";
+
+        var pumpkin_seeds = "Pumpkin Seeds";
+        var turkey = "Turkey";
+
+        if ((jsonBMRData[0].sleep == "true")) {
+            console.log("Poor Sleeping Patterns was selected by user");
+            document.getElementsByClassName('sleep-yes')[0].innerHTML = sleep;
+            document.getElementsByClassName('sleep-pumpkin-seeds')[0].innerHTML = pumpkin_seeds + "Tryptophan to help produce serotonin";
+            document.getElementsByClassName('sleep-turkey')[0].innerHTML = turkey + "Tryptophan";
+            return sleep + pumpkin_seeds + turkey;
+            
+        }
+    };
+
+
+
+
+    // 
+    
+
+
+
 // function foodSuggestions(jsonBMRData) {
 
 //     switch (jsonBMRData) {
@@ -209,65 +311,58 @@ $.ajax ({
 //     }
 // };
 
-    function physicalFoodSuggestions( jsonBMRData ) {   //NOT RUNNING THROUGH ALL 
-        if ((jsonBMRData[0].muscle_aches == "true")){
-            console.log("Muscle Aches was selected by user");
-            var muscleAchesFood = "Salmon";
-            document.getElementsByClassName('muscle-aches')[0].innerHTML = muscleAchesFood;
-        }
-        else if ((jsonBMRData[0].fatigue == "true")){
-            console.log("Fatigue was selected by user");
-            var fatigueFood;
-            fatigueFood = "Bananas";
-            document.getElementsByClassName('fatigue')[0].innerHTML = fatigueFood;
-        }
-        else if ((jsonBMRData[0].gi_issues == "true")) {
-            console.log("GI Issues was selected by user")
-            var giIssuesFood;
-            giIssuesFood = "Apples";
-            document.getElementsByClassName('gi-issues')[0].innerHTML = giIssuesFood;
-        }
-        else if ((jsonBMRData[0].headaches == "true")) {
-            console.log("Headaches was selected by user")
-            var headachesFood;
-            headachesFood = "Brown Rice";
-            document.getElementsByClassName('headaches')[0].innerHTML = headachesFood;
-        }
-        else{
-            console.log("Error");
-        }
-    };
+    // function physicalFoodSuggestions( jsonBMRData ) {   //NOT RUNNING THROUGH ALL 
+    //     if ((jsonBMRData[0].muscle_aches == "true")){
+    //         console.log("Muscle Aches was selected by user");
+            
+           
+    //     }
+    //     else if ((jsonBMRData[0].fatigue == "true")){
+    //         console.log("Fatigue was selected by user");
+            
+            
+    //     }
+    //     else if ((jsonBMRData[0].gi_issues == "true")) {
+    //         console.log("GI Issues was selected by user")
+            
+            
+    //     }
+    //     else if ((jsonBMRData[0].headaches == "true")) {
+    //         console.log("Headaches was selected by user")
+            
+            
+    //     }
+    //     else{
+    //         console.log("Error");
+    //     }
+    // };
 
-    function mentalFoodSuggestions(jsonBMRData) {   //NOT RUNNING THROUGH ALL
+    // function mentalFoodSuggestions(jsonBMRData) {   //NOT RUNNING THROUGH ALL
 
-        if ((jsonBMRData[0].depression == "true")) {
-            console.log("Depression was selected by user");
-            var depressionFood;
-            depressionFood = "Salmon";
-            document.getElementsByClassName('depression')[0].innerHTML = depressionFood;
-        }
-        else if ((jsonBMRData[0].anxiety == "true")) {
-            console.log("Anxiety was selected by user");
-            var anxietyFood;
-            anxietyFood = "Salmon";
-            document.getElementsByClassName('anxiety')[0].innerHTML = anxietyFood;
-        }
-        else if ((jsonBMRData[0].mood_swings == "true")) {
-            console.log("Mood Swings was selected by user");
-            var moodSwingsFood;
-            moodSwingsFood = "Salmon";
-            document.getElementsByClassName('mood-swings')[0].innerHTML = moodSwingsFood;
-        }
-        else if((jsonBMRData[0].sleep == "true")) { 
-                console.log("Poor Sleeping Patterns was selected by user");
-                var sleepFood;
-                sleepFood = "Salmon";
-                document.getElementsByClassName('sleep')[0].innerHTML = sleepFood;
-        }
-        else {
-            console.log("Error");
-        }
-    };
+    //     if ((jsonBMRData[0].depression == "true")) {
+    //         console.log("Depression was selected by user");
+            
+            
+    //     }
+    //     else if ((jsonBMRData[0].anxiety == "true")) {
+    //         console.log("Anxiety was selected by user");
+            
+           
+    //     }
+    //     else if ((jsonBMRData[0].mood_swings == "true")) {
+    //         console.log("Mood Swings was selected by user");
+           
+            
+    //     }
+    //     else if((jsonBMRData[0].sleep == "true")) { 
+    //             console.log("Poor Sleeping Patterns was selected by user");
+                
+                
+    //     }
+    //     else {
+    //         console.log("Error");
+    //     }
+    // };
 
     
 
