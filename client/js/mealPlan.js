@@ -10,8 +10,6 @@ $.ajax ({
     success: function(response) {
         var returnData = JSON.parse(response);
         if (returnData.msg === "SUCCESS!") {
-           // console.log("Submit success");
-           // localStorage.setItem("user_id" , returnData.data[0].user_id);
             console.log(JSON.stringify(returnData.data[0].user_id));
             //BMRCalculations(jsonBMRData);
 
@@ -19,10 +17,7 @@ $.ajax ({
 
             BMRCalculations(returnData.data);
 
-            
-
-            //$("#get-data").html(returnData.data);
- //           insertSurvey(jsonSurveyData);
+        
            
         } 
         // else if (data.msg === "Failed") {
@@ -128,8 +123,10 @@ $.ajax ({
         error: function(err) {
             alert(err);
         }
-    });
 
+    
+    });
+    
 
     function muscleAches(jsonBMRData) {
         var muscle_aches = "Muscle Aches";
@@ -155,8 +152,8 @@ $.ajax ({
         if((jsonBMRData[0].fatigue == "true")) {
             console.log("Fatigue was selected by user");
             document.getElementsByClassName('fatigue-yes')[0].innerHTML = fatigue;
-            document.getElementsByClassName('fatigue-bananas')[0].innerHTML = bananas;
-            document.getElementsByClassName('fatigue-almonds')[0].innerHTML = almonds;
+            document.getElementsByClassName('fatigue-bananas')[0].innerHTML = bananas + "Bananas are packed with potassium, fiber, vitamin B6, and perfect amounts of carbohydrates and sugars. Since bananas are rich in fiber, they help slow down the digestion of that sugar, sustain a natural boost of energy and keep fullness longer. For best results, make sure to pick a ripe banana!";
+            document.getElementsByClassName('fatigue-almonds')[0].innerHTML = almonds + "Almonds are an excellent source of high-quality protein, fiber, and healthy monosaturated fats. They are filled with vitamin B which helps the body convert food into energy. Grab a handful of almonds when you need a quick energy boost!";
             return fatigue + bananas + almonds;
         }
     };
@@ -170,8 +167,8 @@ $.ajax ({
         if ((jsonBMRData[0].gi_issues == "true")) {
             console.log("GI Issues was selected by user");
             document.getElementsByClassName('gi-issues-yes')[0].innerHTML = gi_issues;
-            document.getElementsByClassName('gi-issues-oats')[0].innerHTML = oats;
-            document.getElementsByClassName('gi-issues-yogurt')[0].innerHTML = yogurt;
+            document.getElementsByClassName('gi-issues-oats')[0].innerHTML = oats + "Oats are a great source of B vitamins, minerals, and dietary soluble fibers. Known as 'Beta-glucan fiber', this can aid slower digestion, increase satiety and suppress appetite. The fiber can normalize bowel movements and decrease constipation by increasing stool size and softening stools, preventing risks of hemorrhoids and colorectal cancer. Make sure when picking oats, going for whole-grain that have been minimally processed will aid the best benefits!";
+            document.getElementsByClassName('gi-issues-yogurt')[0].innerHTML = yogurt + "Yogurt is high in calcium, protein, vitamin B12, and live bacteria known as probiotics. The natural probiotics have been shown to reduce inflammation, and boost digestive health by redcucing bloating, diarrhea, and constipation. Check the label on your yogurt to make sure you are getting the active cultures (probiotics), yogurt that has been unpasteurized.";
             return gi_issues + oats + yogurt;
         }
 
@@ -181,14 +178,14 @@ $.ajax ({
         var headaches = "Headaches";
 
         var brown_rice = "Brown Rice: ";
-        var grapefruit = "Grapefruit: ";
+        var chia_seeds = "Chia Seeds: ";
 
         if ((jsonBMRData[0].headaches == "true")) {
             console.log("Headaches was selected by user");
             document.getElementsByClassName('headaches-yes')[0].innerHTML = headaches;
-            document.getElementsByClassName('headaches-brown-rice')[0].innerHTML = brown_rice;
-            document.getElementsByClassName('headaches-grapefruit')[0].innerHTML = grapefruit;
-            return headaches + brown_rice + grapefruit;
+            document.getElementsByClassName('headaches-brown-rice')[0].innerHTML = brown_rice + "Brown rice have great sources of fiber, whole-grains, and magnesium. Magnesium-rich foods can help prevent headaches and/or migraine attacks.";
+            document.getElementsByClassName('headaches-chia-seeds')[0].innerHTML = chia_seeds + "Chia seeds are also magnesium-rich foods, as well as fiber. The effects of magnesium can prevent headaches, on top of the fiber that will sustain the effects for longer periods of time.";
+            return headaches + brown_rice + chia_seeds;
         }
     };
 
@@ -201,7 +198,7 @@ $.ajax ({
         if ((jsonBMRData[0].depression == "true")) {
             console.log("Depression was selected by user");
             document.getElementsByClassName('depression-yes')[0].innerHTML = depression;
-            document.getElementsByClassName('depression-walnuts')[0].innerHTML = walnuts + "Omega-3 Fatty Acids";
+            document.getElementsByClassName('depression-walnuts')[0].innerHTML = walnuts + "People who suffer from depression are shown to have lower levels of DHA(docosahexaenoic acid) and EPA(eicosapentaenoic acid) in their brain. DHA and EPA are both found in Omega-3 polyunsaturated fatty acids. To gain these health benefits, walnuts have a large amount of Omega-3's and have a significantly higher quantity than any other nut.";
             document.getElementsByClassName('depression-chicken')[0].innerHTML = chicken + "Tryptophan";
             return depression + walnuts + chicken;    
         }
@@ -397,6 +394,12 @@ $.ajax ({
 
     
         if((age1) && (jsonBMRData[0].user_gender_male == "true") && (jsonBMRData[0].exercise_level_dropdown == "active")) {
+            var cal8 =  ["Fruit: 2 cups",
+            "Vegetables: 2 1/2 - 3 cups",
+            "Grains: 6 - 8 oz",
+            "Protein: 5 1/2 - 6 1/2 oz",
+            "Dairy: 3 cups",
+            "Fat: "];
             console.log("Meal plan being calculated");
             return document.getElementsByClassName('cal8')[0].innerHTML = cal8;
         }
@@ -438,12 +441,7 @@ $.ajax ({
         //         "Dairy: 3 cups",
         //         "Fat: "];
 
-        var cal8 =  ["Fruit: 2 cups",
-                "Vegetables: 2 1/2 - 3 cups",
-                "Grains: 6 - 8 oz",
-                "Protein: 5 1/2 - 6 1/2 oz",
-                "Dairy: 3 cups",
-                "Fat: "];
+       
 
         // const cal9 =    ["Fruit: 2 cups",
         //         "Vegetables: 3 cups",
@@ -493,7 +491,7 @@ $.ajax ({
         //         "Protein: 7 oz",
         //         "Dairy: 3 cups",
         //         "Fat: "];const
-    }
+    };
 
 
     

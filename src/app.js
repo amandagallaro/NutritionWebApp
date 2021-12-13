@@ -25,7 +25,7 @@ app.use(session ({
 app.use("/client", express.static(path.resolve(__dirname + "/../client/")));//for finding root directory
 
 var server;
-var port = 2161; /* OR USE 'process.env.PORT || process.env.NODE_PORT || 2161' */
+var port = 2161; 
 
 
 // Listen

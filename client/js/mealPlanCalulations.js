@@ -17,35 +17,6 @@
 // cal15 = "2800 - 3200 calories";
 
 
-
-// $('#survey-button').click(function BMRCalculator(){
-//     var age = $('age').val();
-//     var height = $('height').val();
-//     var weight = $('weight').val();
-//     var male = $('male').val();
-//     var female = $('female').val();
-
-//     //BMR calculations
-//     if(male){
-//         var maleBMR;
-//         maleBMR = (13.397 * weight) + (4.799 * height) - (5.677 * age) + 88.362;
-//         return maleBMR;
-//     }
-//     else if(female){
-//         var femaleBMR;
-//         femaleBMR = (9.247 * weight) + (3.098 * height) - (4.330 * age) + 447.593;
-//         return femaleBMR;
-//     }
-//     else{
-
-//     }
-
-// });
-
-
-
-
-
 // const cal1 =    ["Fruit: 1 1/2 cups",
 //                 "Vegetables: 2 cups",
 //                 "Grains: 5 oz",

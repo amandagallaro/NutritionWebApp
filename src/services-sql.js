@@ -1,4 +1,4 @@
-const { response } = require('express');
+//const { response } = require('express');
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -81,7 +81,7 @@ var services = function(app) {
         });
 
     // PUT function for UPDATING user data based off of user_id from register/login info
-    app.put('/survey-page', function(req, res, next) {
+    app.put('/survey', function(req, res, next) {
 
         var user_id = req.body.user_id;
         var userData = {
@@ -117,7 +117,7 @@ var services = function(app) {
     
 
     // POST function for inserting physical/mental survey symptoms
-    app.post('/survey-page', function(req, res, next) {
+    app.post('/survey', function(req, res, next) {
 
         var surveyData = {
             user_id: req.body.user_id,
@@ -199,6 +199,9 @@ var services = function(app) {
             }
         });
     });
+
+
+    
 
 
 };

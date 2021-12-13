@@ -51,16 +51,13 @@ $('#survey-button').click(function() {          //retrieving values on submit
    
                                            
     $.ajax ({                                        //ajax call for app.put('/survey-page') 
-        url: 'http://localhost:2161/survey-page',
+        url: 'http://localhost:2161/survey',
         type: 'put',
         data: jsonUserData,
         success: function(response) {
             var data = JSON.parse(response);
             if (data.msg === "SUCCESS!") {
                 console.log("Submit success");
-              //  sendData(jsonUserData, jsonSurveyData);
-                
-            //    window.location.replace('http://localhost:2161/mealPlan');
                
             } else if (data.msg === "Failed") {
                 
@@ -76,17 +73,15 @@ $('#survey-button').click(function() {          //retrieving values on submit
 
     // function insertSurvey(jsonSurveyData) {
         $.ajax ({                                   //ajax call for app.post('/survey')
-            url: 'http://localhost:2161/survey-page',
+            url: 'http://localhost:2161/survey',
             type: 'post',
             data: jsonSurveyData,
             success: function(response) {
                 var data = JSON.parse(response);
                 if (data.msg === "SUCCESS!") {
                     console.log("Submit success");
-                   // sendData(jsonUserData, jsonSurveyData);
-                    //localStorage.setItem("user_id" , data.data[0].user_id);
 
-                   location.assign('http://localhost:2161/mealPlan');
+                    window.location.assign('http://localhost:2161/mealPlan');
                 } else {
                     alert(data.msg);
                 }
@@ -98,35 +93,9 @@ $('#survey-button').click(function() {          //retrieving values on submit
        
         });
 
-  
-     return false;
+   return false;
+   
  });
-
-//  function sendData (jsonUserData, jsonSurveyData) {
-//     $.ajax ({
-//         url: 'http://localhost:2161/survey',
-//         type: 'get',
-//         data: [jsonUserData, jsonSurveyData],
-//         success: function(response) {
-//             var data = JSON.parse(response);
-//             if (data.msg === "SUCCESS!") {
-//                 console.log("Survey submit success");
-//                 localStorage.setItem("user_id" , data.data[0].user_id);
-                
-//                 window.location.assign('http://localhost:2161/mealPlan');    //send user and specified data to Meal Plan
-//             } else if (data.msg === "Failed") {
-//                 // Login invalid
-//             } else {
-//                 alert(data.msg);
-//             }  
-//         },
-//         error: function(err) {
-//             alert(err);
-//         }
-//     })
-// }
-
-
 
 
 // $('#form').submit(function(){
