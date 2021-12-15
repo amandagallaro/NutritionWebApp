@@ -64,6 +64,19 @@ h2 {
     
 }
 
+.meal-plan-label {
+    display: block;
+    font-size: 30px;
+    width: 100%;
+}
+
+.Thank-You label {
+    display: block;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
 .BMR-Calculator table{
     background-color: #666161;
     margin-left: auto;
@@ -76,6 +89,12 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     
+}
+
+.Meal-Plan table {
+    background-color: #666161;
+    margin-left: 180px;
+    margin-right: 180px;
 }
 
 .BMR-Calculator td {
@@ -97,6 +116,16 @@ h2 {
     padding: 6px;
 
     
+}
+
+.Meal-Plan td {
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
 }
 
 .Food-Suggestions th {
@@ -127,5 +156,7 @@ h2 {
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 
