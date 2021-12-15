@@ -51,7 +51,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
    
                                            
     $.ajax ({                                        //ajax call for app.put('/survey-page') 
-        url: 'http://localhost:2161/survey',
+        url: 'http://localhost:2161/survey-personal-info',
         type: 'put',
         data: jsonUserData,
         success: function(response) {
@@ -73,7 +73,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
 
     // function insertSurvey(jsonSurveyData) {
         $.ajax ({                                   //ajax call for app.post('/survey')
-            url: 'http://localhost:2161/survey',
+            url: 'http://localhost:2161/survey-symptoms',
             type: 'post',
             data: jsonSurveyData,
             success: function(response) {

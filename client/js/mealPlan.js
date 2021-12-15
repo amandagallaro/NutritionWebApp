@@ -39,17 +39,33 @@ $.ajax ({
             var male_bmr;
             male_bmr = Math.round((13.397 * jsonBMRData[0].user_weight) + (4.799 * jsonBMRData[0].user_height) - (5.677 * jsonBMRData[0].user_age) + 88.362);
             console.log("Male BMR has been calculated");
-            return document.getElementsByClassName('male-bmr')[0].innerHTML = male_bmr + " calories";
+            document.getElementsByClassName('male-bmr')[0].innerHTML = male_bmr + " calories";
         }
         else if(jsonBMRData[0].user_gender_female == "true") {
             var female_bmr;
             female_bmr = Math.round((9.247 * jsonBMRData[0].user_weight) + (3.098 * jsonBMRData[0].user_height) - (4.330 * jsonBMRData[0].user_age) + 447.593);
             console.log("Female BMR has been calculated");
-            return document.getElementsByClassName('female-bmr')[0].innerHTML = female_bmr + " calories";
+            document.getElementsByClassName('female-bmr')[0].innerHTML = female_bmr + " calories";
             
         }
+        else{
+            console.log("Error");
+        }
         
+
+        if(female_bmr >= 2000 && female_bmr <= 2500){
+            var cal8 = ["Fruit: 2 cups",
+            " Vegetables: 2 1/2 - 3 cups",
+            " Grains: 6 - 8 oz",
+            " Protein: 5 1/2 - 6 1/2 oz",
+            " Dairy: 3 cups",
+            " Fat: "];
+            console.log("Meal plan being calculated");
+            document.getElementsByClassName('cal8')[0].innerHTML = cal8;
+        };
     };
+
+    
 
     function displayPersonalInfo(jsonBMRData) {
         var user_first_name = jsonBMRData[0].user_first_name;
@@ -124,7 +140,6 @@ $.ajax ({
             alert(err);
         }
 
-    
     });
     
 
@@ -361,22 +376,31 @@ $.ajax ({
     //     }
     // };
 
-    
+  function displayMealPlan(jsonBMRData) {
 
-
-    function displayMealPlan(jsonBMRData) {
+        var cal8 = "Fruit";
+        
        
-        if ((jsonBMRData[0].user_age >= 14) && (jsonBMRData[0].user_age <= 18)) {
-            var age1;
-            console.log("Calculating age1");
-            return age1;
+        if(jsonBMRData[0].user_gender_male == "true") {
+           
+            console.log("Meal plan being calculated");
+            document.getElementsByClassName('cal8')[0].innerHTML = cal8;
         }
-        else if ((jsonBMRData[0].user_age >= 19) && (jsonBMRData[0].user_age <= 30)){
-            var age2;
-            console.log("Calculating age2");
-            return age2;
+        else{
+            console.log("Error");
+        };
+       
+        // if ((jsonBMRData[0].user_age >= 14) && (jsonBMRData[0].user_age <= 18)) {
+        //     var age1;
+        //     console.log("Calculating age1");
+        //     return age1;
+        // }
+        // else if ((jsonBMRData[0].user_age >= 19) && (jsonBMRData[0].user_age <= 30)){
+        //     var age2;
+        //     console.log("Calculating age2");
+        //     return age2;
             
-        }
+        // }
 
         // const cal1 = ["Fruit: 1 1/2 cups",
         //         "Vegetables: 2 cups",
@@ -393,16 +417,7 @@ $.ajax ({
         //         "Fat: "];
 
     
-        if((age1) && (jsonBMRData[0].user_gender_male == "true") && (jsonBMRData[0].exercise_level_dropdown == "active")) {
-            var cal8 =  ["Fruit: 2 cups",
-            "Vegetables: 2 1/2 - 3 cups",
-            "Grains: 6 - 8 oz",
-            "Protein: 5 1/2 - 6 1/2 oz",
-            "Dairy: 3 cups",
-            "Fat: "];
-            console.log("Meal plan being calculated");
-            return document.getElementsByClassName('cal8')[0].innerHTML = cal8;
-        }
+       
     
 
 

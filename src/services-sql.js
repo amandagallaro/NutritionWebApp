@@ -81,9 +81,9 @@ var services = function(app) {
         });
 
     // PUT function for UPDATING user data based off of user_id from register/login info
-    app.put('/survey', function(req, res, next) {
+    app.put('/survey-personal-info', function(req, res, next) {
 
-        var user_id = req.body.user_id;
+        var user_id = req.body.user_id;    //changed back to body
         var userData = {
             user_first_name: req.body.user_first_name,
             user_last_name: req.body.user_last_name,
@@ -117,10 +117,10 @@ var services = function(app) {
     
 
     // POST function for inserting physical/mental survey symptoms
-    app.post('/survey', function(req, res, next) {
+    app.post('/survey-symptoms', function(req, res, next) {
 
         var surveyData = {
-            user_id: req.body.user_id,
+            user_id: req.body.user_id,     //changed back to body
             muscle_aches: req.body.muscle_aches,
             fatigue: req.body.fatigue,
             gi_issues: req.body.gi_issues,
