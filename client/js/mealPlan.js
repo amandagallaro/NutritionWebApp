@@ -52,18 +52,57 @@ $.ajax ({
             console.log("Error");
         }
         
+        // cal1 = "1600 calories";
+// cal2 = "1800 calories";
+// cal3 = "1800 - 2000 calories";
+// cal4 = "2000 calories";
+// cal5 = "2000 - 2200 calories";
+// cal6 = "2200 calories";
+// cal7 = "2200 - 2400 calories";
+// cal8 = "2000 - 2400 calories";
+// cal9 = "2400 calories";
+// cal10 = "2400 - 2600 calories";
+// cal11 = "2400 - 2800 calories";
+// cal12 = "2600 - 2800 calories";
+// cal13 = "2800 -3000 calories";
+// cal14 = "3000 calories";
+// cal15 = "2800 - 3200 calories";
 
-        if(female_bmr >= 2000 && female_bmr <= 2500){
+        //CREATE SMALLER CALORIE RANGES!!!!!!
+        if(female_bmr >= 1800 && female_bmr <= 2000){
+            var cal3 = ["Fruit: 1 - 2 cups",
+                        " Vegetables: 2 1/2 cups",
+                        " Grains: 6 oz",
+                        " Protein: 5 - 5 1/2 oz",
+                        " Dairy: 3 cups",
+                        " Fat: 3 tbs"];
+            console.log("Calculating 1800-2000 cal meal plan");
+            document.getElementsByClassName('meal-plan')[0].innerHTML = cal3;
+        }
+
+        else if(female_bmr > 2000 && female_bmr <= 2500){
             var cal8 = ["Fruit: 2 cups",
-            " Vegetables: 2 1/2 - 3 cups",
-            " Grains: 6 - 8 oz",
-            " Protein: 5 1/2 - 6 1/2 oz",
-            " Dairy: 3 cups",
-            " Fat: "];
-            console.log("Meal plan being calculated");
-            document.getElementsByClassName('cal8')[0].innerHTML = cal8;
-        };
+                        " Vegetables: 2 1/2 - 3 cups",
+                        " Grains: 6 - 8 oz",
+                        " Protein: 5 1/2 - 6 1/2 oz",
+                        " Dairy: 3 cups",
+                        " Fat: 3 tbs"];
+            console.log("Calculating 2000-2500 cal meal plan");
+            document.getElementsByClassName('meal-plan')[0].innerHTML = cal8;
+        }
+        else if(female_bmr > 2500 && female_bmr >= 2800){
+            var cal12 = ["Fruit: 2 - 2 1/2 cups",
+                        " Vegetables: 3 1/2 cups",
+                        " Grains: 9 - 10 oz",
+                        " Protein: 6 1/2 - 7 oz",
+                        " Dairy: 3 cups",
+                        " Fat: 3 tbs"];
+            console.log("Calculating 2500-2800 cal meal plan");
+            document.getElementsByClassName('meal-plan')[0].innerHTML = cal12;
+        }
     };
+
+
 
     
 
@@ -125,7 +164,7 @@ $.ajax ({
                 //physicalFoodSuggestions(returnData.data);
                 //mentalFoodSuggestions(returnData.data);
 
-                displayMealPlan(returnData.data);
+                //displayMealPlan(returnData.data);
                
             } 
             // else if (data.msg === "Failed") {
@@ -376,19 +415,19 @@ $.ajax ({
     //     }
     // };
 
-  function displayMealPlan(jsonBMRData) {
+//   function displayMealPlan(jsonBMRData) {
 
-        var cal8 = "Fruit";
+//         var cal8 = "Fruit";
         
        
-        if(jsonBMRData[0].user_gender_male == "true") {
+//         if(jsonBMRData[0].user_gender_male == "true") {
            
-            console.log("Meal plan being calculated");
-            document.getElementsByClassName('cal8')[0].innerHTML = cal8;
-        }
-        else{
-            console.log("Error");
-        };
+//             console.log("Meal plan being calculated");
+//             document.getElementsByClassName('cal8')[0].innerHTML = cal8;
+//         }
+//         else{
+//             console.log("Error");
+//         };
        
         // if ((jsonBMRData[0].user_age >= 14) && (jsonBMRData[0].user_age <= 18)) {
         //     var age1;
@@ -421,12 +460,7 @@ $.ajax ({
     
 
 
-        // const cal3 =    ["Fruit: 1 - 2 cups",
-        //          "Vegetables: 2 1/2 cups",
-        //          "Grains: 6 oz",
-        //          "Protein: 5 - 5 1/2 oz",
-        //          "Dairy: 3 cups",
-        //          "Fat: "];
+   
                                 
         // const cal4 =    ["Fruit: 2 cups",
         //         "Vegetables: 2 1/2 cups",
@@ -479,12 +513,7 @@ $.ajax ({
         //         "Dairy: 3 cups",
         //         "Fat: "];
             
-        // const cal12 =   ["Fruit: 2 - 2 1/2 cups",
-        //         "Vegetables: 3 1/2 cups",
-        //         "Grains: 9 - 10 oz",
-        //         "Protein: 6 1/2 - 7 oz",
-        //         "Dairy: 3 cups",
-        //         "Fat: "];
+        
 
         // const cal13 =   ["Fruit: 2 1/2 cups",
         //         "Vegetables: 3 1/2 - 4 cups",
@@ -506,7 +535,7 @@ $.ajax ({
         //         "Protein: 7 oz",
         //         "Dairy: 3 cups",
         //         "Fat: "];const
-    };
+   // };
 
 
     

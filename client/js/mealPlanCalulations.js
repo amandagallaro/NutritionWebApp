@@ -1,20 +1,6 @@
 // Arrays for serving sizes of each food group based on caloric intake
 
-// cal1 = "1600 calories";
-// cal2 = "1800 calories";
-// cal3 = "1800 - 2000 calories";
-// cal4 = "2000 calories";
-// cal5 = "2000 - 2200 calories";
-// cal6 = "2200 calories";
-// cal7 = "2200 - 2400 calories";
-// cal8 = "2000 - 2400 calories";
-// cal9 = "2400 calories";
-// cal10 = "2400 - 2600 calories";
-// cal11 = "2400 - 2800 calories";
-// cal12 = "2600 - 2800 calories";
-// cal13 = "2800 -3000 calories";
-// cal14 = "3000 calories";
-// cal15 = "2800 - 3200 calories";
+
 
 
 // const cal1 =    ["Fruit: 1 1/2 cups",
