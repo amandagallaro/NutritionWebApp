@@ -12,16 +12,15 @@ body {
 
 h2 {
     text-align: center;
-    
 }
 
 .form {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     background-color: #83a4d4;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* ADD BORDER AROUND FORM */
+    border-radius: 20px;
     
 }
 
@@ -46,14 +45,13 @@ h2 {
     font-size: 25px;
     width: 100%;
     text-align: center;
-    
-
 }
 
 .physical-table-label {
     display: block;
     font-size: 20px;
     width: 100%;
+    text-align: center;
     
 }
 
@@ -61,20 +59,35 @@ h2 {
     display: block;
     font-size: 20px;
     width: 100%;
+    text-align: center;
     
 }
 
-.meal-plan-label {
+.Thank-You-Websites label {
     display: block;
-    font-size: 30px;
-    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.Thank-You label {
-    display: block;
-    font-size: 30px;
-    width: 100%;
-    text-align: center;
+.personal-table table {
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.physical-table table{
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.mental-table table{
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .BMR-Calculator table{
@@ -93,8 +106,44 @@ h2 {
 
 .Meal-Plan table {
     background-color: #666161;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Thank-You-Websites table{
+    background-color: #666161;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.personal-table td{
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
+}
+
+.physical-table td{
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
+}
+
+.mental-table td {
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
 }
 
 .BMR-Calculator td {
@@ -110,7 +159,6 @@ h2 {
     background:#4CA1AF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     font-weight: bold;
     font-size: 15px;
     padding: 6px;
@@ -128,33 +176,23 @@ h2 {
     text-align: center;
 }
 
+.Thank-You-Websites td {
+    background:#4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: bold;
+    font-size: 15px;
+    padding: 6px;
+    text-align: center;
+}
+
 .Food-Suggestions th {
     background:#4CA1AF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     font-weight: bold;
     font-size: 23px;
     padding: 6px;
-}
-
-.personal-table {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.physical-table{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.mental-table {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 
