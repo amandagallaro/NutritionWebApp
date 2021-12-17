@@ -1,7 +1,5 @@
 body {
-    background: #3a7bd5;  /* fallback for old browsers */
-    
-
+    background: #3a7bd5;  
     font-family:'Bad Script', cursive;
     font-weight: bolder;
 }
@@ -17,9 +15,9 @@ h2 {
 .form {
     margin-left: 150px;
     margin-right: 150px;
-    background-color: #83a4d4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #83a4d4;  
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  
+    background: linear-gradient(to right, #b6fbff, #83a4d4); 
     border-radius: 20px;
     
 }
@@ -117,9 +115,9 @@ h2 {
 }
 
 .personal-table td{
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF; 
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 20px;
     padding: 6px;
@@ -127,9 +125,9 @@ h2 {
 }
 
 .physical-table td{
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 20px;
     padding: 6px;
@@ -137,9 +135,9 @@ h2 {
 }
 
 .mental-table td {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF; 
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF);
     font-weight: bold;
     font-size: 20px;
     padding: 6px;
@@ -147,18 +145,18 @@ h2 {
 }
 
 .BMR-Calculator td {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 20px;
     padding: 6px;
     text-align: center;
 }
 .Food-Suggestions td {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 15px;
     padding: 6px;
@@ -167,9 +165,9 @@ h2 {
 }
 
 .Meal-Plan td {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 20px;
     padding: 6px;
@@ -177,9 +175,9 @@ h2 {
 }
 
 .Thank-You-Websites td {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 15px;
     padding: 6px;
@@ -187,9 +185,9 @@ h2 {
 }
 
 .Food-Suggestions th {
-    background:#4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:#4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF); 
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     font-weight: bold;
     font-size: 23px;
     padding: 6px;

@@ -11,7 +11,6 @@ $.ajax ({
         var returnData = JSON.parse(response);
         if (returnData.msg === "SUCCESS!") {
             console.log(JSON.stringify(returnData.data[0].user_id));
-            //BMRCalculations(jsonBMRData);
 
             displayPersonalInfo(returnData.data); //TO DISPLAY ALL PERSONAL INFO
 
@@ -81,7 +80,7 @@ $.ajax ({
 
 
         
-        if ((female_bmr < 1200) || male_bmr < 1200){        //CHANGE PHRASING ON THIS!!!
+        if ((female_bmr < 1200) || male_bmr < 1200){    
             var warning = "Please consider checking with a doctor to make sure you are absolutely healthy! Always better to be safer than sorry.";
             console.log("Out of range for meal plan result");
             document.getElementsByClassName('meal-plan')[0].innerHTML = warning;

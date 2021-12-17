@@ -27,7 +27,6 @@ var services = function(app) {
             if(err) throw err;
             //if user email already exists
             if (rows.length > 0) {
-               // window(JSON.stringify(alert("You have already registered with this email!")));  //doesnt work
                 console.log("User exists");
                 
                 return res.status(201).send(JSON.stringify({msg: "Failed"}));
@@ -41,7 +40,6 @@ var services = function(app) {
                         return res.status(200).send(JSON.stringify({msg: "Error: " + err}));
                     } else {
                         console.log("Inserted new row to MySQL");
-                        //window(JSON.stringify(alert("You have successfully registered!"))); //doesnt work
                         return res.status(201).send(JSON.stringify({msg: "SUCCESS!"}));
                     }
                 })
@@ -70,7 +68,7 @@ var services = function(app) {
                 }   
                 else {
                     console.log("User login failed");
-                    //ADD A POP UP FOR "INVALID EMAIL/PASSWORD!" or "YOU HAVE NOT SUCCESSFULLY REGISTERED YET!"
+                    
                 
              
                     return res.status(200).send(JSON.stringify({msg: "Failed"}));
@@ -108,8 +106,7 @@ var services = function(app) {
                     console.log("Updating new data into user table");
                     console.log("New user info updated to user table: " + JSON.stringify(userData));
                     
-                    
-                    return res.status(201).send(JSON.stringify({msg:"SUCCESS"}));
+                    return res.status(201).send(JSON.stringify({msg:"SUCCESS!"}));
                     
                 }
             });
@@ -175,12 +172,7 @@ var services = function(app) {
 
     app.get('/mealPlan-survey', function(req, res, next) {
         var user_id = req.query.user_id;
-        // var bmrData = {
-        //     user_id: req.body.user_id,
-        //     user_age: req.body.user_age,
-        //     user_height: req.body.user_height,
-        //     user_weight: req.body.user_weight 
-        // };
+
         console.log(user_id);
         console.log("Inserting survey data");
 
@@ -206,15 +198,4 @@ var services = function(app) {
 
 };
 
-
-
-
 module.exports = services;
-
-// app.get() and app.post() CANT have the same name
-
-//put statement (update users (all data input) where user_id = (the user_id that user brought over))
-
-//change gender to true/false
-//alter dropdown box
-//update db accordingly (update data)

@@ -1,4 +1,3 @@
-
 $('#survey-button').click(function() {          //retrieving values on submit
     var user_first_name = $('#first-name').val();
     var user_last_name = $('#last-name').val();
@@ -31,7 +30,6 @@ $('#survey-button').click(function() {          //retrieving values on submit
         
     }
     
-
     var jsonSurveyData = {
         user_id: localStorage.getItem("user_id"),
         muscle_aches: muscle_aches,
@@ -71,7 +69,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
          }
      });
 
-    // function insertSurvey(jsonSurveyData) {
+    
         $.ajax ({                                   //ajax call for app.post('/survey')
             url: 'http://localhost:2161/survey-symptoms',
             type: 'post',
@@ -83,7 +81,7 @@ $('#survey-button').click(function() {          //retrieving values on submit
 
                     window.location.assign('http://localhost:2161/mealPlan');
                 } else {
-                    alert(data.msg);
+                    //alert(data.msg);
                 }
                
             },
@@ -96,9 +94,3 @@ $('#survey-button').click(function() {          //retrieving values on submit
    return false;
    
  });
-
-
-// $('#form').submit(function(){
-//     return false;
-// })
-

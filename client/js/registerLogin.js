@@ -43,7 +43,7 @@ $('#register-button').click(function() {
             var data = JSON.parse(response);
             if (data.msg === "SUCCESS!") {
                 console.log("Register success");
-                loginInfo(jsonString);      ////connection to the server function for register
+                loginInfo(jsonString);      //connection to the server function for register
             } else if (data.msg === "Failed") {
                 // Login invalid
             } else {
