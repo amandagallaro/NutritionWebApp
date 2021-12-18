@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+.survey-title {
+    font-size: 40px;
+}
+
 /* Styling the Form (Color, Padding, Shadow) */
 form {
     background-color:#fdeff9;
