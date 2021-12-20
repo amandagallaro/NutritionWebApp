@@ -355,7 +355,7 @@ $.ajax ({
     };
 
     function sleep(jsonBMRData){
-        var sleep = "Sleep";
+        var sleep = "Poor Sleeping Patterns";
 
         var pumpkin_seeds = "Pumpkin Seeds: ";
         var turkey = "Turkey: ";
